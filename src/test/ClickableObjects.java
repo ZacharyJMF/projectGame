@@ -1,3 +1,4 @@
+package test;
 import nl.saxion.app.SaxionApp;
 
 public class ClickableObjects

@@ -1,3 +1,4 @@
+package test;
 import nl.saxion.app.SaxionApp;
 
 import nl.saxion.app.interaction.GameLoop;
@@ -28,7 +29,7 @@ public class BasicGame implements GameLoop {
 
     @Override
     public void init() {
-        r1= new Room("basicGame/1.png");
+        r1= new Room("resources/1.png");
 
     }
 
