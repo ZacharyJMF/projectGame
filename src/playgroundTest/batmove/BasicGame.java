@@ -15,11 +15,14 @@ public class BasicGame implements GameLoop {
     @Override
     public void init() {
         bat = new Bat();
+        bat.x=100;
+        bat.y=100;
+        bat.filename="resources/bat.jpeg";
     }
 
     @Override
     public void loop() {
-
+        bat.draw();
     }
 
     @Override
