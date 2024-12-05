@@ -8,7 +8,5 @@ public class Bat {
 
     public void draw(){
         SaxionApp.drawImage(filename, x,y,100, 100);
-        x++;
-        y++;
     }
 }
