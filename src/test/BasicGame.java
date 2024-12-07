@@ -14,19 +14,12 @@ public class BasicGame implements GameLoop {
     }
 
     private static Room r1;
-    //private static final String img2 = "basicGame/2.png";
+    private static final String img2 = "basicGame/2.png";
     //private static final String img3 = "basicGame/3.png";
 
 //    coordinates and size for flower
 
 //    coordinates and size for light
-
-
-// Hello there
-
-
-
-
 
 
     @Override
@@ -54,10 +47,12 @@ public class BasicGame implements GameLoop {
         String output=r1.getClick(mouseX,mouseY);
         System.out.println("Output of click: "+output);
         System.out.println(position);
-        SaxionApp.setFill(Color.white);
-        SaxionApp.drawRectangle(0,0,1000,200);
-        SaxionApp.setTextDrawingColor(Color.black);
-        SaxionApp.drawText(position,10,10,20);
+
+        // Display text of position
+//        SaxionApp.setFill(Color.white);
+//        SaxionApp.drawRectangle(0,0,1000,200);
+//        SaxionApp.setTextDrawingColor(Color.black);
+//        SaxionApp.drawText(position,10,10,20);
         SaxionApp.setFill(Color.RED);
         SaxionApp.drawRectangle(mouseX - 50 ,mouseY - 50 , 100,100);
     }
