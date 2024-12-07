@@ -27,6 +27,8 @@ public class BasicGame implements GameLoop {
 
 
 
+
+
     @Override
     public void init() {
         r1= new Room("resources/1.png");
