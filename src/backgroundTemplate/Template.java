@@ -19,8 +19,9 @@ public class Template implements GameLoop {
     @Override
     public void init() {
 
-        // Declaring how many rooms
+        // Declaring how many rooms, add more when we get more rooms
         rooms = new BackgroundScene[4];// Change the 4 to however much more rooms there are
+
         // Keep adding the amount of rooms needed and amount of props, in the order of the rooms pls <3
         rooms[0]=new BackgroundScene("resources/1.png"); // Room image
         rooms[0].clickablePropLocation(100, 100, 50, 50, "prop 1 in room 1"); // Prop location
@@ -63,7 +64,7 @@ public class Template implements GameLoop {
             int mouseX = mouseEvent.getX();
             int mouseY = mouseEvent.getY();
             String output = rooms[currentRoom].getClick(mouseX, mouseY);
-            System.out.println("click "+output);
+            System.out.println("click "+output); // Outputting activity
 
             // Switching between rooms
             if (output.equals("nextRoom")) { // Next room

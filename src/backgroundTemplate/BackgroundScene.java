@@ -15,42 +15,38 @@ public class BackgroundScene {
         width=1000;
         height=1000;
 
+        // Props array
+        props = new ArrayList<>();
         // Room switching array
         roomSwitching = new ArrayList<>();
         roomSwitching.add(new ClickableObjects(935,500,65,65, "nextRoom"));
         roomSwitching.add(new ClickableObjects(0,500,65,65, "previousRoom"));
-        // Props array
-        props = new ArrayList<>();
-//        props.add(new ClickableObjects(900,900,50,50, "propOne"));
-//        props.add(new ClickableObjects(200,900,50,50, "propTwo"));
-//        props.add(new ClickableObjects(700,500,50,50, "propThree"));
-//        props.add(new ClickableObjects(300,500,50,50, "propFour"));
     }
 
-    // Method to add props
+    // Method to add props from Template
     public void clickablePropLocation(int x, int y, int width, int height, String message){
         props.add(new ClickableObjects(x,y,width,height,message));
     }
 
-    // Drawing the room images
+    // Drawing everything
     public void draw(){
-        SaxionApp.drawImage(background,0,0,width,height);
-        for (ClickableObjects clickableObject : roomSwitching) {
+        SaxionApp.drawImage(background,0,0,width,height); // Drawing the background
+        for (ClickableObjects clickableObject : roomSwitching) { // Drawing the room switch
             clickableObject.draw();
         }
-        for (ClickableObjects clickableObject : props) {
+        for (ClickableObjects clickableObject : props) { // Drawing the props
             clickableObject.draw();
         }
     }
 
-    // Getting user input clicks
+    // User input clicks
     public String getClick(int x, int y){
-        for (ClickableObjects clickableObject : roomSwitching) {
+        for (ClickableObjects clickableObject : roomSwitching) { // Click input for the room switching
             if(clickableObject.isMe(x,y)){
                 return clickableObject.toString();
             }
         }
-        for (ClickableObjects clickableObject : props) {
+        for (ClickableObjects clickableObject : props) { // Click input for the props
             if(clickableObject.isMe(x,y)){
                 return clickableObject.toString();
             }
