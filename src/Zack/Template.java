@@ -1,10 +1,9 @@
-package backgroundTemplate;
+package Zack;
 
 import nl.saxion.app.SaxionApp;
 import nl.saxion.app.interaction.GameLoop;
 import nl.saxion.app.interaction.KeyboardEvent;
 import nl.saxion.app.interaction.MouseEvent;
-import java.awt.*;
 
 public class Template implements GameLoop {
 

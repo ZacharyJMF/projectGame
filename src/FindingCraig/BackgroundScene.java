@@ -1,6 +1,7 @@
-package backgroundTemplate;
+package FindingCraig;
 
 import nl.saxion.app.SaxionApp;
+
 import java.util.ArrayList;
 
 public class BackgroundScene {
