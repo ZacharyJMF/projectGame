@@ -13,7 +13,7 @@ public class Template implements GameLoop {
     private long clickTime;
 
     public static void main(String[] args) {
-        SaxionApp.startGameLoop(new Template(), 1000, 1000, 300);
+        SaxionApp.startGameLoop(new Template(), 1000, 1000, 40);
     }
 
     @Override
