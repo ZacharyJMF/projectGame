@@ -10,6 +10,7 @@ public class BackgroundScene {
     ArrayList<ClickableObjects> roomSwitching;
     ArrayList<ClickableObjects> props;
     int width,height;
+    int example;
 
     public BackgroundScene(String background) {
         this.background = background;
