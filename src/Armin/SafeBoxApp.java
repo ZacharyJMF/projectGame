@@ -3,7 +3,6 @@ package Armin;
 import nl.saxion.app.SaxionApp;
 import nl.saxion.app.interaction.GameLoop;
 import nl.saxion.app.interaction.MouseEvent;
-import java.util.concurrent.TimeUnit;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -37,18 +36,18 @@ public class SafeBoxApp implements GameLoop {
 
     @Override
     public void init() {
-        //Draw the safe box image
-        SaxionApp.drawImage(safeboxImg, 0, 0, 100, 100);
+        // Draw the safe box image
+//        SaxionApp.drawImage(safeboxImg, 0, 0, 1000, 1000);
     }
 
     @Override
     public void loop() {
         SaxionApp.clear();
         // Draw the safe box image only once per frame
-        SaxionApp.drawImage(safeboxImg,0,0,1000,1000);
+        SaxionApp.drawImage(safeboxImg, 0, 0, 1000, 1000);
 
         // Draw static text for entered numbers
-        SaxionApp.setFill(Color.WHITE);
+        SaxionApp.setFill(Color.BLACK);
         SaxionApp.drawText("Entered Numbers:", 400, 100, 30);
 
         // Display the entered numbers
@@ -57,15 +56,16 @@ public class SafeBoxApp implements GameLoop {
     }
 
 
+    private boolean mouseHandled = false; // Prevents processing the same click multiple times
 
     @Override
     public void mouseEvent(MouseEvent mouseEvent) {
-        // Only handle left clicks and avoid multiple handling of the same click
-        if (mouseEvent.isLeftMouseButton()) {
+        // Check if a left click occurred and hasn't already been handled
+        if (mouseEvent.isLeftMouseButton() && !mouseHandled) {
             double mouseX = mouseEvent.getX();
             double mouseY = mouseEvent.getY();
 
-            // Check for clicks on each number button (bounds checking)
+            // Check if the click is within any button's bounds
             for (int[] bound : numpadBounds) {
                 int x = bound[0];
                 int y = bound[1];
@@ -73,19 +73,24 @@ public class SafeBoxApp implements GameLoop {
                 int height = bound[3];
                 String number = String.valueOf(bound[4]);
 
-                // If the mouse click is inside the button's bounds
                 if (mouseX >= x && mouseX <= x + width && mouseY >= y && mouseY <= y + height) {
-                    // Add the clicked number to the list
-                    enteredNumbers.add(number);
-                    try {
-                        TimeUnit.SECONDS.sleep(1);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
+                    // Prevent duplicate additions
+                    if (enteredNumbers.isEmpty() || !enteredNumbers.get(enteredNumbers.size() - 1).equals(number)) {
+                        enteredNumbers.add(number);
+                        SaxionApp.printLine("Number added: " + number);
+                    } else {
+                        SaxionApp.printLine("Duplicate click ignored for number: " + number);
                     }
-                    break;  // Exit after adding the number
+                    break;
                 }
             }
 
+            mouseHandled = true; // Mark click as handled
+        }
+
+        // Reset the flag when the mouse is released
+        if (!mouseEvent.isLeftMouseButton()) {
+            mouseHandled = false;
         }
     }
 

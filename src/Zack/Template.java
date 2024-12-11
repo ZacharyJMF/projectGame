@@ -1,3 +1,12 @@
+// TODO
+// Add all images and props location to a different class to make more space in the main file
+// Make the clickable props "square" invisible
+// Make the switching "black square boxes" into either an arrow or a long vertical like button.
+// Move mouseEvents into another class is possible as to interfere with other members mouseEvent.
+
+// Should be done by Wednesday 23:59 PM
+
+
 package Zack;
 
 import nl.saxion.app.SaxionApp;
@@ -19,7 +28,7 @@ public class Template implements GameLoop {
     public void init() {
 
         // Declaring how many rooms, add more when we get more rooms
-        rooms = new BackgroundScene[4];// Change the 4 to however much more rooms there are
+        rooms = new BackgroundScene[4]; // Change the 4 to however much more rooms there are
 
         // Keep adding the amount of rooms needed and amount of props, in the order of the rooms pls <3
         rooms[0]=new BackgroundScene("resources/1.png"); // Room 1 image

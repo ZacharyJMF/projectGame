@@ -54,7 +54,7 @@ public class TestMenu implements GameLoop {
         if(mainMenu.isShow())
         {
             mainMenu.draw();
-        }else{
+        } else{
 
         }
     }
