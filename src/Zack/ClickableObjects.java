@@ -22,7 +22,11 @@ public class ClickableObjects {
 
     // Drawing clickable object location
     // Make invisible and display image when clicked on
-    public void draw(){
+    public void drawSwitches(){
+        SaxionApp.setFill(Color.yellow);
+        SaxionApp.drawRectangle(x,y,width,height);
+    }
+    public void drawProps(){
         SaxionApp.setFill(Color.black);
         SaxionApp.drawRectangle(x,y,width,height);
     }
