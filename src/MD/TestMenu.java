@@ -1,18 +1,17 @@
-package MainMenu;
+package MD;
 
+import com.sun.tools.javac.Main;
 import nl.saxion.app.SaxionApp;
 import nl.saxion.app.interaction.GameLoop;
 import nl.saxion.app.interaction.KeyboardEvent;
 import nl.saxion.app.interaction.MouseEvent;
 
-import java.awt.*;
-
-public class MainMenu implements GameLoop {
-
+public class TestMenu implements GameLoop {
+    MainMenu mainMenu = new MainMenu();
     private boolean startGame = false;
 
     public static void main(String[] args) {
-        SaxionApp.startGameLoop(new MainMenu(), 800, 600, 30);
+        SaxionApp.startGameLoop(new TestMenu(), 800, 600, 30);
     }
 
 
@@ -51,7 +50,13 @@ public class MainMenu implements GameLoop {
 
     @Override
     public void loop() {
+        SaxionApp.clear();
+        if(mainMenu.isShow())
+        {
+            mainMenu.draw();
+        }else{
 
+        }
     }
 
     @Override
@@ -61,6 +66,8 @@ public class MainMenu implements GameLoop {
 
     @Override
     public void mouseEvent(MouseEvent mouseEvent) {
-
+        if(mainMenu.isShow()){
+            mainMenu.click(mouseEvent);
+        }
     }
 }

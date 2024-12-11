@@ -1,4 +1,4 @@
-package SafeBox;
+package Armin;
 
 import nl.saxion.app.SaxionApp;
 import nl.saxion.app.interaction.GameLoop;

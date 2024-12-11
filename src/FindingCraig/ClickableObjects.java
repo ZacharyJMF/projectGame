@@ -1,6 +1,7 @@
-package backgroundTemplate;
+package FindingCraig;
 
 import nl.saxion.app.SaxionApp;
+
 import java.awt.*;
 
 public class ClickableObjects {

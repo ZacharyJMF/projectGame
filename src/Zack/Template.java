@@ -1,10 +1,9 @@
-package backgroundTemplate;
+package Zack;
 
 import nl.saxion.app.SaxionApp;
 import nl.saxion.app.interaction.GameLoop;
 import nl.saxion.app.interaction.KeyboardEvent;
 import nl.saxion.app.interaction.MouseEvent;
-import java.awt.*;
 
 public class Template implements GameLoop {
 
@@ -13,7 +12,7 @@ public class Template implements GameLoop {
     private long clickTime;
 
     public static void main(String[] args) {
-        SaxionApp.startGameLoop(new Template(), 1000, 1000, 300);
+        SaxionApp.startGameLoop(new Template(), 1000, 1000, 40);
     }
 
     @Override
