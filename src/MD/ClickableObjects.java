@@ -34,6 +34,9 @@ public class ClickableObjects {
         SaxionApp.setFill(Color.black);
         SaxionApp.drawRectangle(x,y,width,height);
     }
+    public void testJuan(){
+        SaxionApp.print("this is a test");
+    }
 
     @Override
     public String toString() {

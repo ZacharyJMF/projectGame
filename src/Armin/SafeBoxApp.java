@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class SafeBoxApp implements GameLoop {
 
+    private long clickTime;
     public static void main(String[] args) {
         SaxionApp.startGameLoop(new SafeBoxApp(), 1000, 1000, 40);
     }
@@ -37,7 +38,7 @@ public class SafeBoxApp implements GameLoop {
     @Override
     public void init() {
         // Draw the safe box image
-//        SaxionApp.drawImage(safeboxImg, 0, 0, 1000, 1000);
+        clickTime=0;
     }
 
     @Override
@@ -55,42 +56,57 @@ public class SafeBoxApp implements GameLoop {
         SaxionApp.drawText(displayText, 400, 150, 40);
     }
 
-
-    private boolean mouseHandled = false; // Prevents processing the same click multiple times
+//    private boolean mouseHandled = false; // Prevents processing the same click multiple times
 
     @Override
     public void mouseEvent(MouseEvent mouseEvent) {
-        // Check if a left click occurred and hasn't already been handled
-        if (mouseEvent.isLeftMouseButton() && !mouseHandled) {
-            double mouseX = mouseEvent.getX();
-            double mouseY = mouseEvent.getY();
 
-            // Check if the click is within any button's bounds
-            for (int[] bound : numpadBounds) {
-                int x = bound[0];
-                int y = bound[1];
-                int width = bound[2];
-                int height = bound[3];
-                String number = String.valueOf(bound[4]);
+        long currentTime = System.currentTimeMillis();
 
-                if (mouseX >= x && mouseX <= x + width && mouseY >= y && mouseY <= y + height) {
-                    // Prevent duplicate additions
-                    if (enteredNumbers.isEmpty() || !enteredNumbers.get(enteredNumbers.size() - 1).equals(number)) {
+        if (currentTime - clickTime > 300) {
+            // Check if a left click occurred and hasn't already been handled
+            if (mouseEvent.isLeftMouseButton()) {
+                double mouseX = mouseEvent.getX();
+                double mouseY = mouseEvent.getY();
+
+                // Check if the click is within any button's bounds
+                for (int[] bound : numpadBounds) {
+                    int x = bound[0];
+                    int y = bound[1];
+                    int width = bound[2];
+                    int height = bound[3];
+                    String number = String.valueOf(bound[4]);
+
+
+                    if (mouseX >= x && mouseX <= x + width && mouseY >= y && mouseY <= y + height) {
+                        // Prevent duplicate additions
+
+                        System.out.println(number);
                         enteredNumbers.add(number);
-                        SaxionApp.printLine("Number added: " + number);
-                    } else {
-                        SaxionApp.printLine("Duplicate click ignored for number: " + number);
+
+
+
+
+
+
+//                        if (enteredNumbers.isEmpty() || !enteredNumbers.get(enteredNumbers.size() - 1).equals(number)) {
+//                            enteredNumbers.add(number);
+//                            SaxionApp.printLine("Number added: " + number);
+//                        }
+    //                    else {
+    //                        SaxionApp.printLine("Duplicate click ignored for number: " + number);
+    //                    }
+    //                    break;
                     }
-                    break;
                 }
+//            mouseHandled = true; // Mark click as handled
             }
 
-            mouseHandled = true; // Mark click as handled
-        }
-
-        // Reset the flag when the mouse is released
-        if (!mouseEvent.isLeftMouseButton()) {
-            mouseHandled = false;
+            // Reset the flag when the mouse is released
+//        if (!mouseEvent.isLeftMouseButton()) {
+//            mouseHandled = false;
+//        }
+            currentTime = clickTime;
         }
     }
 

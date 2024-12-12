@@ -9,6 +9,7 @@ public class BackgroundScene {
     String background;
     ArrayList<ClickableObjects> roomSwitching;
     ArrayList<ClickableObjects> props;
+    ArrayList<ClickableObjects> testJuan;
     int width,height;
 
     public BackgroundScene(String background) {
@@ -48,6 +49,11 @@ public class BackgroundScene {
             }
         }
         for (ClickableObjects clickableObject : props) { // Click input for the props
+            if(clickableObject.isMe(x,y)){
+                return clickableObject.toString();
+            }
+        }
+        for (ClickableObjects clickableObject : testJuan) {
             if(clickableObject.isMe(x,y)){
                 return clickableObject.toString();
             }
