@@ -1,11 +1,15 @@
 package Zack;
 
 import nl.saxion.app.SaxionApp;
+import nl.saxion.app.canvas.drawable.Image;
+
 import java.awt.*;
 
 public class ClickableObjects {
     public int x,y,width,height;
     public String message;
+    private Image lImage;
+    private Image rImage;
 
     public ClickableObjects(int x, int y, int width, int height, String message) {
         this.x = x;

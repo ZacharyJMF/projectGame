@@ -2,10 +2,10 @@
 // Add all images and props location to a different class to make more space in the main file
 // Make the clickable props "square" invisible
 // Make the switching "black square boxes" into either an arrow or a long vertical like button.
-// Move mouseEvents into another class is possible as to interfere with other members mouseEvent.
+// Move mouseEvents into another class because it's possible it will interfere with other members mouseEvent.
 
 // Should be done by Wednesday 23:59 PM
-
+// Not done
 
 package Zack;
 
