@@ -3,6 +3,8 @@ package Armin;
 import nl.saxion.app.SaxionApp;
 import nl.saxion.app.interaction.GameLoop;
 import nl.saxion.app.interaction.MouseEvent;
+
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import java.awt.*;
@@ -18,6 +20,7 @@ public class SafeBoxApp implements GameLoop {
     String safeboxImg = "resources/safe-box.png";
     ArrayList<String> enteredNumbers = new ArrayList<>();
     private long clickTime;
+    int passcode = 250;
     int[][] numpadBounds = {
             {545, 429, 50, 50, 1}, // 1
             {614, 429, 50, 50, 2}, // 2
@@ -63,15 +66,38 @@ public class SafeBoxApp implements GameLoop {
                     if (mouseX >= x && mouseX <= x + width && mouseY >= y && mouseY <= y + height) {
                         enteredNumbers.add(number);
                     }
-
                     String displayText = String.join("", enteredNumbers);
                     SaxionApp.drawText(displayText, 400, 150, 40);
 
 
+                    while (enteredNumbers.size() == 3){
+                        if(Integer.valueOf(displayText) == passcode){
+                            SaxionApp.clear();
+                            SaxionApp.drawText("you passed this puzzle", 300, 500, 40);
+                            break;
+                        }else {
+                            enteredNumbers.clear();
+                            redraw();
+                            break;
+                        }
+
+                    }
                 }
+
+
+
+
+
             }
             clickTime = currentTime;
         }
+    }
+
+    private void redraw() {
+        SaxionApp.clear();
+        SaxionApp.drawImage(safeboxImg, 0, 0, 1000, 1000);
+        SaxionApp.drawText("Entered Numbers:", 400, 100, 30);
+
     }
 
     @Override
