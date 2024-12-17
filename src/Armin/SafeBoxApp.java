@@ -34,6 +34,7 @@ public class SafeBoxApp implements GameLoop {
             {613, 669, 50, 50, 0}  // 0
     };
 
+
     @Override
     public void init() {
         long clickTime = 0;
