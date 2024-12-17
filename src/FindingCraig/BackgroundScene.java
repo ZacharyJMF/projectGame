@@ -33,10 +33,10 @@ public class BackgroundScene {
     public void draw(){
         SaxionApp.drawImage(background,0,0,width,height); // Drawing the background
         for (ClickableObjects clickableObject : roomSwitching) { // Drawing the room switch
-            clickableObject.draw();
+            clickableObject.drawSwitches();
         }
         for (ClickableObjects clickableObject : props) { // Drawing the props
-            clickableObject.draw();
+            clickableObject.drawProps();
         }
     }
 

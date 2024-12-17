@@ -83,11 +83,6 @@ public class SafeBoxApp implements GameLoop {
 
                     }
                 }
-
-
-
-
-
             }
             clickTime = currentTime;
         }

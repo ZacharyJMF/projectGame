@@ -1,12 +1,15 @@
 package FindingCraig;
 
 import nl.saxion.app.SaxionApp;
+import nl.saxion.app.canvas.drawable.Image;
 
 import java.awt.*;
 
 public class ClickableObjects {
     public int x,y,width,height;
     public String message;
+    private Image lImage;
+    private Image rImage;
 
     public ClickableObjects(int x, int y, int width, int height, String message) {
         this.x = x;
@@ -23,7 +26,11 @@ public class ClickableObjects {
 
     // Drawing clickable object location
     // Make invisible and display image when clicked on
-    public void draw(){
+    public void drawSwitches(){
+        SaxionApp.setFill(Color.yellow);
+        SaxionApp.drawRectangle(x,y,width,height);
+    }
+    public void drawProps(){
         SaxionApp.setFill(Color.black);
         SaxionApp.drawRectangle(x,y,width,height);
     }
