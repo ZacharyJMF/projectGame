@@ -70,7 +70,6 @@ public class SafeBoxApp implements GameLoop {
                     String displayText = String.join("", enteredNumbers);
                     SaxionApp.drawText(displayText, 400, 150, 40);
 
-
                     while (enteredNumbers.size() == 3){
                         if(Integer.valueOf(displayText) == passcode){
                             SaxionApp.clear();
