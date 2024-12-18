@@ -37,8 +37,10 @@ public class Template implements GameLoop {
 
     @Override
     public void init() {
+
         rooms = new Rooms();
         sceneClicking = new SceneClicking(rooms, 0);
+
         long clickTime = 0;
         SaxionApp.drawImage(safeboxImg, 0, 0, 1000, 1000);
         SaxionApp.drawText("Entered Numbers:", 400, 100, 30);
@@ -58,7 +60,9 @@ public class Template implements GameLoop {
 
     @Override
     public void mouseEvent(MouseEvent mouseEvent) {
+        // Call mouseEvent in SceneClicking
         sceneClicking.handleMouseEvent(mouseEvent);
+
         long currentTime = System.currentTimeMillis();
         if (currentTime - clickTime > 300) {
             if (mouseEvent.isLeftMouseButton()) {
@@ -96,6 +100,7 @@ public class Template implements GameLoop {
             clickTime = currentTime;
         }
     }
+    
     private void redraw() {
         SaxionApp.clear();
         SaxionApp.drawImage(safeboxImg, 0, 0, 1000, 1000);
