@@ -105,6 +105,5 @@ public class Template implements GameLoop {
         SaxionApp.clear();
         SaxionApp.drawImage(safeboxImg, 0, 0, 1000, 1000);
         SaxionApp.drawText("Entered Numbers:", 400, 100, 30);
-
     }
 }
