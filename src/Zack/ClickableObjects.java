@@ -17,6 +17,7 @@ public class ClickableObjects {
         this.width = width;
         this.height = height;
         this.message = message;
+        Color colorTrans = new Color(0,0,0);
     }
 
     // Checks if coordinates are withing bounds of clickable object

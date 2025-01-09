@@ -13,25 +13,25 @@ public class BackgroundScene {
 
     public BackgroundScene(String background) {
         this.background = background;
-        width=1000;
-        height=1000;
+        width = 1000;
+        height = 1000;
 
         // Props array
         props = new ArrayList<>();
         // Room switching array
         roomSwitching = new ArrayList<>();
-        roomSwitching.add(new ClickableObjects(935,500,65,65, "nextRoom"));
-        roomSwitching.add(new ClickableObjects(0,500,65,65, "previousRoom"));
+        roomSwitching.add(new ClickableObjects(935, 500, 65, 65, "nextRoom", "resources/right.png"));
+        roomSwitching.add(new ClickableObjects(0, 500, 65, 65, "previousRoom", "resources/left.png"));
     }
 
     // Method to add props from Template
-    public void clickablePropLocation(int x, int y, int width, int height, String message){
-        props.add(new ClickableObjects(x,y,width,height,message));
+    public void clickablePropLocation(int x, int y, int width, int height, String message, String imagePath) {
+        props.add(new ClickableObjects(x, y, width, height, message, imagePath));
     }
 
     // Drawing everything
-    public void draw(){
-        SaxionApp.drawImage(background,0,0,width,height); // Drawing the background
+    public void draw() {
+        SaxionApp.drawImage(background, 0, 0, width, height); // Drawing the background
         for (ClickableObjects clickableObject : roomSwitching) { // Drawing the room switch
             clickableObject.drawSwitches();
         }

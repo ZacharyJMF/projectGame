@@ -15,7 +15,7 @@ public class MainMenu {
         this.show = show;
     }
     public void draw(){
-        SaxionApp.drawText("Finding Game", 350, 200, 30);
+        SaxionApp.drawText("Finding Craig", 350, 200, 30);
         SaxionApp.drawRectangle(350, 250, 100, 50); // Start button border
         SaxionApp.drawText("Start", 375, 275, 20);
     }

@@ -35,7 +35,7 @@ public class TestMenu implements GameLoop {
         SaxionApp.clear();
 
         if (!startGame) {
-            SaxionApp.drawText("Finding Game", 350, 200, 30);
+            SaxionApp.drawText("Finding Craig", 350, 200, 30);
             SaxionApp.drawRectangle(350, 250, 100, 50); // Start button border
             SaxionApp.drawText("Start", 375, 275, 20); // Start button text
         } else {
