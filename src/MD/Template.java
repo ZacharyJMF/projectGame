@@ -20,6 +20,7 @@ public class Template implements GameLoop {
     private static BackgroundScene[] rooms;
     private long clickTime;
 
+
     public static void main(String[] args) {
         SaxionApp.startGameLoop(new Template(), 1000, 1000, 40);
     }

@@ -45,7 +45,7 @@ public class TestMenu implements GameLoop {
 
     @Override
     public void init() {
-
+        mainMenu.show=true;
     }
 
     @Override
