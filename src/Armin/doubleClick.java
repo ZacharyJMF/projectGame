@@ -14,7 +14,7 @@ public class doubleClick implements GameLoop {
     private Rooms rooms;
     private SceneClicking sceneClicking;
     private safeBox safeBox;
-    private String previousImage = "recources/right.jpeg";
+    private String previousImage = "/right.jpeg";
 
 
     public static void main(String[] args) {
