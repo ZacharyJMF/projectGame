@@ -18,7 +18,8 @@ public class BackgroundScene {
 
         // Props array
         props = new ArrayList<>();
-        // Room switching array
+
+        // Room switching array, Add more switches here if needed
         roomSwitching = new ArrayList<>();
         roomSwitching.add(new ClickableObjects(935,500,65,65, "nextRoom"));
         roomSwitching.add(new ClickableObjects(0,500,65,65, "previousRoom"));
@@ -26,7 +27,7 @@ public class BackgroundScene {
 
     // Method to add props from Template
     public void clickablePropLocation(int x, int y, int width, int height, String message){
-        props.add(new ClickableObjects(x,y,width,height,message));
+        props.add(new ClickableObjects(x,y,width,height,message, null));
     }
 
     // Drawing everything
