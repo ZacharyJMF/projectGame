@@ -4,47 +4,58 @@ public class Rooms {
     private BackgroundScene[] rooms;
 
     public Rooms() {
-        // Declaring how many rooms, add more when we get more rooms
-        rooms = new BackgroundScene[24]; // Change the 4 to however many more rooms there are
+        rooms = new BackgroundScene[24];
 
-        // Keep adding the amount of rooms needed and amount of props, in the order of the rooms pls <3
-        rooms[0] = new BackgroundScene("resources/escalator.png"); // Room 1 image
-        rooms[0].clickablePropLocation(100, 100, 50, 50, "prop 1 in room 1"); // Prop location
-        rooms[0].clickablePropLocation(200, 200, 50, 50, "prop 2 in room 1");
+        // Room 0: Escalator
+        rooms[0] = new BackgroundScene("resources/escalator.png");
+        rooms[0].clickablePropLocation(420, 330, 240, 370, "nextRoom", null);
 
-        rooms[1] = new BackgroundScene("resources/escalatorSide.png"); // Room 2 image
-        rooms[1].clickablePropLocation(150, 150, 50, 50, "prop 1 in room 2"); // Prop location
-        rooms[1].clickablePropLocation(250, 250, 50, 50, "prop 2 in room 2");
+        // Room 1: Library Entry
+        rooms[1] = new BackgroundScene("resources/libraryEntry.png");
+        rooms[1].clickablePropLocation(358, 382, 259, 380, "nextRoom", null);
 
-        rooms[2] = new BackgroundScene("resources/corridor.png"); // Room 3 image
-        rooms[2].clickablePropLocation(300, 300, 50, 50, "prop 1 in room 3"); // Prop location
-        rooms[2].clickablePropLocation(400, 400, 50, 50, "prop 2 in room 3");
+        // Room 2: Library Corridor
+        rooms[2] = new BackgroundScene("resources/libraryCorridor.png");
+        rooms[2].clickablePropLocation(500, 300, 225, 265, "nextRoom", null);
 
-        rooms[3] = new BackgroundScene("resources/hallwayTwo.png"); // Room 4 image
-        rooms[3].clickablePropLocation(350, 350, 50, 50, "prop 1 in room 4"); // Prop location
-        rooms[3].clickablePropLocation(450, 450, 50, 50, "prop 2 in room 4");
+        // Room 3: Library Dude One
+        rooms[3] = new BackgroundScene("resources/libraryDudeOne.png");
+        rooms[3].clickablePropLocation(300, 381, 225, 210, "nextRoom", null);
 
-        rooms[4] = new BackgroundScene("resources/hallwayOne.png");
-        rooms[5] = new BackgroundScene("resources/map.png");
-        rooms[6] = new BackgroundScene("resources/roomOne.png");
-        rooms[7] = new BackgroundScene("resources/roomMiddle.png");
-        rooms[8] = new BackgroundScene("resources/roomBackWall.png");
-        rooms[9] = new BackgroundScene("resources/roomLeft.png");
-        rooms[10] = new BackgroundScene("resources/roomBackRight.png");
-        rooms[11] = new BackgroundScene("resources/roomWhiteboard.png");
-        rooms[12] = new BackgroundScene("resources/libraryEntry.png");
-        rooms[13] = new BackgroundScene("resources/libraryCorridor.png");
-        rooms[14] = new BackgroundScene("resources/libraryDudeOne.png");
-        rooms[15] = new BackgroundScene("resources/libraryDudeTwo.png");
-        rooms[16] = new BackgroundScene("resources/bookVeryFar.png");
-        rooms[17] = new BackgroundScene("resources/bookFar.png");
-        rooms[18] = new BackgroundScene("resources/bookClose.png");
-        rooms[19] = new BackgroundScene("resources/bookOne.png");
-        rooms[20] = new BackgroundScene("resources/bookTwo.png");
-        rooms[21] = new BackgroundScene("resources/bagOne.png");
-        rooms[22] = new BackgroundScene("resources/bagTwo.png");
-        rooms[23] = new BackgroundScene("resources/stupid.png");
+        // Room 4: Library Dude Two
+        rooms[4] = new BackgroundScene("resources/libraryDudeTwo.png");
+        rooms[4].clickablePropLocation(235, 160, 454, 509, "nextRoom", null);
 
+        // Room 5: Book Very Far
+        rooms[5] = new BackgroundScene("resources/bookVeryFar.png");
+        rooms[5].clickablePropLocation(470, 450, 280, 150, "nextRoom", null);
+
+        // Room 6: Book Far
+        rooms[6] = new BackgroundScene("resources/bookFar.png");
+        rooms[6].clickablePropLocation(257, 470, 376, 217, "nextRoom", null);
+
+        // Room 7: Book Close (contains bookOne and bookTwo)
+        rooms[7] = new BackgroundScene("resources/bookClose.png");
+        rooms[7].clickablePropLocation(235, 458, 196, 173, "bookOne", null); // Hint
+        rooms[7].clickablePropLocation(611, 586, 275, 792, "bookTwo", null); // Solution
+
+        // Add numbered buttons for puzzle input (only in the bookTwo room)
+        rooms[7].clickablePropLocation(50, 200, 50, 50, "1", null); // Button for number 1
+        rooms[7].clickablePropLocation(110, 200, 50, 50, "2", null); // Button for number 2
+        rooms[7].clickablePropLocation(170, 200, 50, 50, "3", null); // Button for number 3
+        rooms[7].clickablePropLocation(230, 200, 50, 50, "4", null); // Button for number 4
+        rooms[7].clickablePropLocation(290, 200, 50, 50, "5", null); // Button for number 5
+
+        // Room 10: Bag One
+        rooms[10] = new BackgroundScene("resources/bagOne.png");
+        rooms[10].clickablePropLocation(325,215,425,465, "nextRoom", null);
+
+        // Room 11: Bag Two
+        rooms[11] = new BackgroundScene("resources/bagTwo.png");
+        rooms[11].clickablePropLocation(330,290,390,340, "nextRoom", null);
+
+        // Room 12: Stupid
+        rooms[12] = new BackgroundScene("resources/winPage.png");
 
 
     }

@@ -34,5 +34,8 @@ public class Template implements GameLoop {
     @Override
     public void mouseEvent(MouseEvent mouseEvent) {
         sceneClicking.handleMouseEvent(mouseEvent);
+        int mouseX = mouseEvent.getX();
+        int mouseY = mouseEvent.getY();
+        System.out.println("Mouse clicked at: (" + mouseX + ", " + mouseY + ")");
     }
 }
